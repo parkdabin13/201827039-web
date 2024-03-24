@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top and Left Tabs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="d_Top">
+        <p>학번: 201827039</p>
+        <p>이름: 박다빈</p>
+    </div>
+    <div class="d_Left">
+        <button onclick="openTab('canvas')">버튼 1</button>
+        <button onclick="openTab('game')">버튼 2</button>
+    </div>
+    <div class="d_Right" id="defaultContent">
+        <p>빈 화면</p>
+    </div>
+    <div id="canvasContent" class="content hidden">
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+    </div>
+    <div id="gameContent" class="content hidden">
+        <div class="image-container", style="max-width: 100%; max-height: 80vh;">
+            <img src="ELDENRING.jpg" alt="좋아하는 게임 스크린샷" width="500">
+        </div>
+        <div class="description" style="text-align: left;">
+            <p><strong>이름:</strong> 엘든링</p>
+            <p><strong>오픈일:</strong> 22년 2월 25일</p>
+            <p><strong>장르:</strong>3인칭 오픈월드 ARPG</p>
+            <p><strong>설명:</strong> 
+                플레이어의 경험적인 능력에 따라 다양한 전투 경험을 제공하여 <br> 
+                다 회차 플레이에 대한 진입장벽이 매우 낮아 <br>
+                다양한 빌드를 연구하고 실험해 보는 경험이 매우 좋았습니다.</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var canvasContent = document.getElementById('canvasContent');
+            var gameContent = document.getElementById('gameContent');
+            var defaultContent = document.getElementById('defaultContent');
+
+            canvasContent.classList.add('hidden');
+            gameContent.classList.add('hidden');
+            defaultContent.classList.add('hidden');
+
+            if (tabName === 'canvas') {
+                canvasContent.classList.remove('hidden');
+                drawCircle();
+            } else if (tabName === 'game') {
+                gameContent.classList.remove('hidden');
+            }
+        }
+
+        function drawCircle() {
+            var canvas = document.getElementById('myCanvas');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(300, 300, 200, 0, 2 * Math.PI);
+                ctx.fillStyle = 'black';
+                ctx.fill();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.d_Top {
+    background-color: #333;
+    color: #fff;
+    display: flex; /* Flexbox 사용 */
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    padding: 10px;
+}
+.d_Top p {
+    margin-right: 10px; /* 학번과 이름 사이 여백 */
+}
+.d_Left {
+    float: left;
+    width: 200px;
+    background-color: #f2f2f2;
+    height: 100vh;
+    padding-top: 20px;
+}
+.d_Left button {
+    display: block;
+    width: 90%;
+    margin: 8px auto;
+    padding: 8px;
+    border: none;
+    background-color: #ddd;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+}
+.d_Left button:hover {
+    background-color: #ccc;
+}
+.d_Right {
+    margin: auto; /* 수평 가운데 정렬 */
+    padding: 200px;
+    text-align: center; /* 내용 가운데 정렬 */
+}
+.hidden {
+    display: none; /* 숨김 */
+}
+.description {
+    margin-top: 20px;
+}
+.image-container {
+    float: left; /* 왼쪽 정렬 */
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px; /* 사진과 설명 사이 간격 */
+}
+.description ul {
+    list-style-type: none;
+    padding: 0;
+}
