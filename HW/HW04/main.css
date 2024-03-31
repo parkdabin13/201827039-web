@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+#NumberScreenCanvas {
+    margin-top: 20px;
+  margin-right: 20px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+#numberInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#CreateDigitalButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
