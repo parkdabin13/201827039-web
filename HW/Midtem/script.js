@@ -1,7 +1,8 @@
-
 window.addEventListener('keydown', function(e) {
+    // F5 키를 눌렀을 때
     if (e.key === 'F5') {
-        e.preventDefault();
+        e.preventDefault(); // 기본 동작 방지 (브라우저 새로고침 방지)
+        // 별의 위치를 랜덤으로 설정
         starX = Math.random() * (ctx.canvas.width - 60) + 30;
         starY = Math.random() * (ctx.canvas.height - 60) + 30;
     }
@@ -12,9 +13,9 @@ function startGame() {
     const canvas = document.getElementById("myCanvas");
     canvas.style.display = "block"; // 캔버스 표시
     
-    titleContainer.style.display = "none";
+    titleContainer.style.display = "none"; // 타이틀 숨김
     
-    // 게임 시작 지연
+    // 게임 시작을 1초 뒤에 시작
     setTimeout(() => {
         requestAnimationFrame(draw);
     }, 1000);
@@ -59,6 +60,7 @@ function drawHeart(x, y, size, color, borderColor, rotation) {
     ctx.rotate(rotation);
     ctx.translate(-x, -y);
 
+    // 하트 그리기
     ctx.moveTo(x, y - size * 0.55);
     ctx.bezierCurveTo(
         x + size * 0.7, y - size,
@@ -85,6 +87,7 @@ function drawStar(x, y, radius, spikes, color, borderColor) {
     ctx.beginPath();
     ctx.moveTo(x, y - radius);
 
+    // 별 그리기
     for (let i = 0; i < spikes; i++) {
         x = xInner + Math.cos(rot) * radius;
         y = yInner + Math.sin(rot) * radius;
@@ -108,6 +111,7 @@ function drawStar(x, y, radius, spikes, color, borderColor) {
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
+    // 랜덤 컬러 생성
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
@@ -153,7 +157,7 @@ function draw() {
         const dy = player.y - enemy.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < heartSize + enemyRadius) {
-            // 충돌 발생
+            // 충돌 발생 시 적 삭제
             enemies.splice(i, 1);
             i--;
         } else {
@@ -177,6 +181,7 @@ function draw() {
         }
     }
 
+    // 랜덤으로 적 생성
     if (Math.random() < numEnemiesPerSecond * deltaTime) {
         const side = Math.floor(Math.random() * 4); // 0: 위, 1: 오른쪽, 2: 아래, 3: 왼쪽
         let x, y;
