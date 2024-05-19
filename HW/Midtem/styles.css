@@ -17,10 +17,22 @@ canvas {
     display: none; /* 기본적으로 숨김 */
 }
 
-.title-container {
+.title-container, .gameover-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.gameover-container {
+    display: none; /* 기본적으로 숨김 */
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
 }
 
 .start-button {
