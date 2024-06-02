@@ -90,4 +90,4 @@ function getRandomColor() {
 }
 
 // 일정 간격으로 삼각형 회전 함수를 호출하여 회전하는 효과를 생성
-setInterval(rotateTriangle, 50);
+setInterval(rotateTriangle, 10);
